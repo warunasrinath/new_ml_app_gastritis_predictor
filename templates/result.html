@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Gastritis Predictor</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='gastritis-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+
+		<div style="background:linear-gradient(45deg, #620974, #b12525, #028849)" class="container">
+            <h2  class='container-heading'><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;"    class="heading_font">The resul page of Gastritis Predictor</span></h2>
+            <div class='description'>
+    			<span style="font-family:Arial Narrow Bold ; font-style: inherit; color: azure;">Welcome to your result page !!!, According to your predicted details please focus on medications with the  recommendation  of a doctor</span>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div style="background:linear-gradient(45deg, #7c737e, #eef1be, #c4f7df)" class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='nogas'>Great !!! You don’t have gastritis.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='no-gastritis.webp') }}" alt="Not_gastritis Image">
+			{% elif prediction==2 %}
+				<h1>Prediction: <span style="color: rgb(255, 0, 0);" class='gas'>Ohh !!! Your gastritis level will be acute. Meet your family doctor and <a href="https://zeep.ly/wMhbp" > Get rid of bad habits </a>. </span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='gastritis.webp') }}" alt="Gastritis Image">
+			{% elif prediction==3 %}
+				<h1>Prediction: <span style="color: rgb(179, 0, 0);" class='longgas'>Seriously!!! Gastritis level can be chronic. Meet a Gastrointestinal Surgeon.</span></h1>
+				<img class="gif2" src="{{ url_for('static', filename='gastritischronic.webp') }}" alt="Gastritis_chronic Image">
+			{% endif %}
+			
+
+		</div>
+
+		<div style="background:linear-gradient(45deg, #620974, #b12525, #028849)" class='footer'>
+			<p style="font-weight:bolder;" class='footer-description'>Done by Waruna Srinath</p>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Gastritis Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='gastritis-favicon.ico') }}"> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <script src="js/script.js"></script>
+        <script src="jquery-3.6.1.min.js"></script>
+    </head>
+
+    <body>
+
+
+    	<div class="container" style="background:linear-gradient(45deg, #620974, #b12525, #028849) ;
+    padding: 40px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;
+	position: relative;
+	background-size: 550% 550%;
+	animation: change-gradient 10s ease-in-out infinite;">
+
+            <h2  class='container-heading'><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;"    class="heading_font">Gastritis Predictor</span></h2>
+            <div class='description'>
+    			<span style="font-family:Arial Narrow Bold ; font-style: inherit; color: azure;" >Add your personal details for below text fields</span>
+    		</div>
+    	</div>
+        
+        <!--Main Text and Submit Area -->
+    	<div class="ml-container" style="background:linear-gradient(45deg, #7c737e, #eef1be, #c4f7df); margin-top: 0%; margin-bottom: 0%;">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <div>
+                    <p style="font-weight: bold;">1. If you have below mentioned symptoms, put the number into the text box.</p>
+                    <p>0 for none symptoms |
+                        1 for Nausea and vomiting |
+                        2 for Dull pain |
+                        3 for Heartburn |
+                        4 for Abdominal discomfort |
+                        5 for Loss of appetite.
+                     </p>
+                </div>
+                <input class="form-input" id="1" type="text" name="TSG" placeholder="1. symptoms"><br>
+                <div>
+                    <p style="font-weight: bold;">2. Put the number for particular time duration for above signs</p>
+                    <p>0 for none |
+                        1 for less than two days |
+                        2 for less than two weeks |
+                        3 for a months ago |
+                        4 for less than six months |
+                        5 for above six month.
+                     </p>
+                </div>
+                <input class="form-input" id="2" type="text" name="TSS" placeholder="2. time seen for signs"><br>
+                <div>
+                    <p style="font-weight: bold;">3. If you usually drink 3.5 litres per day put 1, if not put 2</p>
+                </div>
+                <input class="form-input" id="3" type="text" name="WCP" placeholder="3. water consumption per day >= 3.5L "><br>
+                <div>
+                    <p style="font-weight: bold;">
+                      4. If you have this type of sign or habit, put the relevant number to textbox 
+                    </p>
+                    <p>
+                        1 for Eating Spicy foods |
+                        2 for No Habit of exercise |
+                        3 for Stress and anxiety |
+                        4 for Having Regularly the same food
+                    </p>
+                    
+                </div>
+                <input class="form-input" id="4" type="text" name="PFS" placeholder="4. practices for the signs"><br>
+                <div>
+                    <p style="font-weight: bold;">5. If you take gastric irritation drugs put 1, if not put 2</p>
+                </div>
+                <input class="form-input" id="5" type="text" name="GID" placeholder="5. gastritis irritation drugs"><br>
+                <div>
+                    <p style="font-weight: bold;">
+                        6. If you aren't washing hands before eating put 1, if you wash your hand before eating put 2.
+                    </p>
+                </div>
+                <input class="form-input" id="6" type="text" name="NWHB" placeholder="6. not washing hands before eating"><br>
+                <div>
+                    <p style="font-weight: bold;">
+                        7. If you skipp and delay your meal time put 1, if not put 2
+                    </p>
+                </div>
+                <input class="form-input" id="7" type="text" name="SDM" placeholder="7. skipped and delayed meals"><br>
+                <div>
+                    <p style="font-weight: bold;">8. If you are eating uncooked foods put 1, if not put 2</p>
+           
+                </div>
+                <input class="form-input" id="8" type="text" name="EUF" placeholder="8. eating uncooked foods"><br> 
+                <div>
+                    <p style="font-weight: bold;">
+                       9. If you use some substance (alcohol, drugs, smoking cigarette) put 1, if not put 2
+                    </p>
+                </div>
+                <input class="form-input" id="9" type="text" name="ISU" placeholder="9. involvement in Substance_Use"><br>
+
+        		<input id="10" type="submit" value="Predict" style="background-color:#ec1a1aef;border:1px solid #ff803a;border-radius:15px;color:#ffffff;display:inline-block;font-family:'Montserrat',Arial, Geneva, sans-serif;font-size:14px;font-weight:700;line-height:30px;text-align:center;text-decoration:none;width:180px; margin-top: 8px; margin-bottom: 10px;">
+        	</form>
+    	</div>
+
+       <div class="footer" style="background:linear-gradient(45deg, #620974, #b12525, #028849);
+    flex-shrink: 0;
+	position: relative;
+	padding: 20px;
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;">
+        <p style="font-weight:bolder;" class='footer-description'>Done by Waruna Srinath</p>
+       </div>
+
+       <script src="demo_script_src.js">
+    </script>
+
+    </body>
+    </html>
+
+
+
+
